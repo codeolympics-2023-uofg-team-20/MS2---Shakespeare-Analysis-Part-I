@@ -3,9 +3,9 @@ def load_contents(filename):
     with open(filename) as f:
         for line in f.readlines():
             for word in line.strip().split(' '):
-                if word == '':
+                if word.lower() == '':
                     continue
-                res.append(word)
+                res.append(word.lower())
     return res
     
     
