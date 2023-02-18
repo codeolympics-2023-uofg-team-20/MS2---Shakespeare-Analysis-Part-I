@@ -1,3 +1,5 @@
+import re
+
 def load_contents(filename):
     res = []
     with open(filename) as f:
@@ -5,7 +7,7 @@ def load_contents(filename):
             for word in line.strip().split(' '):
                 if word.lower() == '':
                     continue
-                res.append(word.lower())
+                res.append(re.sub(r'[^a-zA-Z\s]','',word.lower()))
     return res
     
     
